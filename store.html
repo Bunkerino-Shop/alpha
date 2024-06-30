@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Negozio - Server Minecraft PvP</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+.dropbtn {
+  background-color: #e100ff;
+  margin-left: 50px ;
+  margin-right: 50px ;
+  color: #390f61;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position:fixed;
+  background-color: #333;
+  min-width: 160px;
+  overflow:auto;
+  box-shadow: 0 0 15px #c529ca, /* Effetto neon - primo strato */
+              0 0 20px #b336a9, /* Effetto neon - secondo strato */
+              0 0 25px #9b3a8b, /* Effetto neon - terzo strato */
+              0 0 30px #85387b; /* Effetto neon - quarto strato */
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display:flex;
+  margin: 0 auto;
+}
+
+.dropdown a:hover {
+    background-color: #333;
+    box-shadow: 0 0 15px #c529ca, /* Effetto neon - primo strato */
+                0 0 20px #b336a9, /* Effetto neon - secondo strato */
+                0 0 25px #9b3a8b, /* Effetto neon - terzo strato */
+                0 0 30px #85387b; /* Effetto neon - quarto strato */;
+    border-radius: 8px;
+}
+
+.show {display: block;}
+</style>
+</head>
+<body style="background-color:#390f61;">
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="Minecraft PvP Server Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="forum.html">Forum</a></li>
+                <li><a href="store.html">Store</a></li>
+                <li><a href="staff.html">Staff</a></li>
+                <li><a href="login.html">Accedi</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="page">
+    <div class="main-content">
+        <section id="store">
+            <h2>Negozio</h2>
+            <p>Acquista ranghi VIP e kit PvP per migliorare la tua esperienza di gioco.</p>
+
+<div class="dropdown">
+  <button onclick="VIP()" class="dropbtn">VIP</button>
+  <div id="VIPDropdown" class="dropdown-content">
+    <a href="#home">Mulatto</a>
+    <a href="#about">Marocchina</a>
+    <a href="#contact">Negro</a>
+  </div>
+</div>
+<div class="dropdown">
+    <button onclick="KitPVP()" class="dropbtn">Kit PvP</button>
+    <div id="KitDropdown" class="dropdown-content">
+        <!-- Contenuto del dropdown -->
+        <a href="#ciao">NegroV2</a>
+        <a href="#dopo">Negraccio</a>
+        <a href="#domani">Negroni (l'amaro)</a>
+    </div>
+</div>
+
+</section>
+
+<section id="mclogin">
+    <h2>Accedi</h2>
+    <form id="login-form">
+        <label for="username">NickName:</label>
+        <input type="text" id="username" name="username" required>
+        <button type="submit">Accedi</button>
+    </form>
+    <p id="login-status"></p>
+</section>
+
+<script>
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function VIP() {
+  document.getElementById("VIPDropdown").classList.toggle("show");
+}
+function KitPVP() {
+  document.getElementById("KitDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
+
+</body>
+</html>
